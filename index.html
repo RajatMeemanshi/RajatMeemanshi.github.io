@@ -30,6 +30,8 @@
         hvDocConfig.setShouldShowInstructionPage(true);
 		hvDocConfig.setShouldShowDocReviewScreen(true);
 		hvDocConfig.docTextConfig.setDocInstructionsTitle('DOC CAPTURE TITLE');
+	      	hvDocConfig.setChooseDocumentCaptureOption(true);
+	      hvDocConfig.docTextConfig.setDocChoiceScreenTitle('DOC TITLE');
         HVDocsModule.start(hvDocConfig, callback);
       }
       function runLiveness() {
