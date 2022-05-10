@@ -54,7 +54,7 @@
 	
 	}
 	  
-      var callback1 = (HVError, HVResponse) => {
+       callback1 = (HVError, HVResponse) => {
         if (HVError) {
           var para = document.createElement('p');
           var node = document.createTextNode(JSON.stringify(HVError));
@@ -70,7 +70,7 @@
 	  docImage = HVResponse.imgBase64;
         }
 
-	var callback2 = (HVError, HVResponse) => {
+	 callback2 = (HVError, HVResponse) => {
         if (HVError) {
           var para = document.createElement('p');
           var node = document.createTextNode(JSON.stringify(HVError));
@@ -87,7 +87,7 @@
 	  faceImage = HVResponse.imgBase64;
         }
 		
-	var callback3 = (HVError, HVResponse) => {
+	 callback3 = (HVError, HVResponse) => {
         if (HVError) {
           var para = document.createElement('p');
           var node = document.createTextNode(JSON.stringify(HVError));
