@@ -55,37 +55,39 @@
 	}
 	  
        callback1 = (HVError, HVResponse) => {
-        if (HVError) {
-          var para = document.createElement('p');
-          var node = document.createTextNode(JSON.stringify(HVError));
-          para.appendChild(node);
-          var element = document.getElementById('div1');
-          element.appendChild(para);
-        } else {
-          var para = document.createElement('p');
-          var node = document.createTextNode(JSON.stringify(HVResponse));
-          para.appendChild(node);
-          var element = document.getElementById('div1');
-          element.appendChild(para);
-	  docImage = HVResponse.imgBase64;
-        }
+			if (HVError) {
+			  var para = document.createElement('p');
+			  var node = document.createTextNode(JSON.stringify(HVError));
+			  para.appendChild(node);
+			  var element = document.getElementById('div1');
+			  element.appendChild(para);
+			} else {
+			  var para = document.createElement('p');
+			  var node = document.createTextNode(JSON.stringify(HVResponse));
+			  para.appendChild(node);
+			  var element = document.getElementById('div1');
+			  element.appendChild(para);
+			  docImage = HVResponse.imgBase64;
+			}
+		};
 
-	 callback2 = (HVError, HVResponse) => {
-        if (HVError) {
-          var para = document.createElement('p');
-          var node = document.createTextNode(JSON.stringify(HVError));
-          para.appendChild(node);
-          var element = document.getElementById('div1');
-          element.appendChild(para);
-	 
-        } else {
-          var para = document.createElement('p');
-          var node = document.createTextNode(JSON.stringify(HVResponse));
-          para.appendChild(node);
-          var element = document.getElementById('div1');
-          element.appendChild(para);
-	  faceImage = HVResponse.imgBase64;
-        }
+		 callback2 = (HVError, HVResponse) => {
+			if (HVError) {
+			  var para = document.createElement('p');
+			  var node = document.createTextNode(JSON.stringify(HVError));
+			  para.appendChild(node);
+			  var element = document.getElementById('div1');
+			  element.appendChild(para);
+		 
+			} else {
+			  var para = document.createElement('p');
+			  var node = document.createTextNode(JSON.stringify(HVResponse));
+			  para.appendChild(node);
+			  var element = document.getElementById('div1');
+			  element.appendChild(para);
+			  faceImage = HVResponse.imgBase64;
+			}
+		};
 		
 	 callback3 = (HVError, HVResponse) => {
         if (HVError) {
