@@ -51,8 +51,8 @@
 	function runFaceMatch(){
 		var a = runOCR();
 		var b = runLiveness();
-		console.log(a);
-		console.log(b);
+		console.log(JSON.stringify(a));
+		console.log(JSON.stringify(b));
 	
 	}
       callback = (HVError, HVResponse) => {
