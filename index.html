@@ -9,6 +9,7 @@
       <div class="form-group">
         <button type="button" onclick="runOCR();" class="btn btn-primary">Run OCR</button>
         <button type="button" onclick="runLiveness();" class="btn btn-primary">Run Face Liveness</button>
+	<button type="button" onclick="runFaceMatch();" class="btn btn-primary">Run Face Match</button>
       </div>
       <div id="div1"></div>
     </div>
@@ -33,6 +34,7 @@
 	      	hvDocConfig.setChooseDocumentCaptureOption(true);
 	      hvDocConfig.docTextConfig.setDocChoiceScreenTitle('DOC TITLE');
         HVDocsModule.start(hvDocConfig, callback);
+	       return callback.HVResponse;
       }
       function runLiveness() {
         hvFaceConfig = new HVFaceConfig();
@@ -43,7 +45,13 @@
           allowMultipleFaces: 'no',
         });
         HVFaceModule.start(hvFaceConfig, callback);
+	      return callback.HVResponse;
       }
+	    
+	function runFaceMatch(){
+		var a = runOCR();
+		var b = runLiveness();
+	}
       callback = (HVError, HVResponse) => {
         if (HVError) {
           var para = document.createElement('p');
