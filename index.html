@@ -17,7 +17,7 @@
       // client calls the auth api to get the token from their backend server
       var jwtToken = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjUzMzI1MTI1LCJleHAiOjE2NTMzMzcxMjUsImp0aSI6IjljMmQ4MDNjLTQ5ODItNDFhNy05ZjViLThhOTI1Yjk1MmVhNSJ9.AU3709bzlq7r__ydHpkBqHWspSAPKwA_oGHEbc4pABMmHwruT8-U0B24kaYHmMM_823huoWoQvM71yoFOsIamlgNA06QrAoIqjwGCxucp0ZOa8ZxANFjMX8wLkOAmZGZepd6eK40_6UT9id9t8A0YXik2UboZdA6O1t0I8xRmx4'
       HyperSnapSDK.init(jwtToken, HyperSnapParams.Region.Africa);
-      HyperSnapSDK.startUserSession();
+      HyperSnapSDK.startUserSession('test');
       var faceImage = '';
       var docImage = '';
       function runOCR() {
