@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@3.3.5/src/sdk.min.js"></script>
+    <script src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@3.4.3/src/sdk.min.js"></script>
   </head>
   <body>
     <center><h2>Hyperverge WebSDK Demo</h2></center>
@@ -15,8 +15,8 @@
     </div>
     <script>
       // client calls the auth api to get the token from their backend server
-      var jwtToken = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjUyODY3MzExLCJleHAiOjE2NTI5MjczMTEsImp0aSI6IjY4OTQzNWJhLTc4NzEtNDY3Yi1hMjM2LTI4NmE1OTI4ZjgxMSJ9.Wx4SfdQBFYJDl5OXA0QwXgJvJDQlNIODuA0Kfy7Je37KGEwnMO0ObMR2WauABAPBjLLns-CCe2Fe_E4xEoS7iS0E2pndQuPqry11vBQW16qOLtNr49pAjR3d579TESIQV5QmuoQM1jU6uNbS8GqzjsntT3Kbsc1izbQCIuuuoEA'
-      HyperSnapSDK.init(jwtToken, HyperSnapParams.Region.India);
+      var jwtToken = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjUzMzI0NzA5LCJleHAiOjE2NTMzMjQ4MjksImp0aSI6IjhhNjQ1OTM3LTM5MjItNDhmZi1iZjI0LTJlMTVkYzRiOTQzYSJ9.eZHW-aUFuo34UHyn4y-kakA8_XwexWSnOBBnRoKnrfV33q53nghEnUNBH9k81ICIXZmwhERrecTkpVz0t5ebxU_pZQaovbWeZfFHP_wiEoAcMVm8zg79P_sB7UDncSa6I9uzyKg8QDf639On0UTGPKok62iIYoxwMfeTd6mqqog'
+      HyperSnapSDK.init(jwtToken, HyperSnapParams.Region.Africa);
       HyperSnapSDK.startUserSession();
       var faceImage = '';
       var docImage = '';
