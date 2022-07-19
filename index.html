@@ -1,112 +1,40 @@
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script crossorigin
-            src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@3.4.3>/src/sdk.min.js"
-          ></script> 
-	</head>
-  <body>
-    <center><h2>Hyperverge WebSDK Demo</h2></center>
-    <div class="container">
-      <div class="form-group">
-        <button type="button" onclick="runOCR();" class="btn btn-primary">Run OCR</button>
-        <button type="button" onclick="runLiveness();" class="btn btn-primary">Run Face Liveness</button>
-	<button type="button" onclick="runFaceMatch();" class="btn btn-primary">Run Face Match</button>
-      </div>
-      <div id="div1"></div>
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+    <script
+        src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@5.1.1/src/sdk.min.js"></script>
+</head>
+​
+<body>
+    <div>
+        <button type="button" onclick="starOnboarding();">
+            Start Onboarding
+        </button>
     </div>
-    <script>
-      // client calls the auth api to get the token from their backend server
-      var jwtToken = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjUzNjYwNjYzLCJleHAiOjE2NTM3MjA2NjMsImp0aSI6IjA3NDczMGU4LTM2OTItNDlhMC1hNzNiLWM1N2FiZjQ2MTMzZCJ9.ouqVUnV2P14ws0TnAL0U2Z6gLT1QLpeMukYm7Qm0t7iv0WnxqS8jzDtMeMH-768li0nLJ32AioENne_OnAXwc6-9Pn0ikDHTJlJaQNb9Xx4Ig-Zm0YswECl2Z1z5giLIdYh_Pq5PgY-879PnEqhSyBXCNHgxgHrqQ9cWD6ENzNQ'
-      HyperSnapSDK.init(jwtToken, HyperSnapParams.Region.India);
-      HyperSnapSDK.startUserSession('test');
-      var faceImage = '';
-      var docImage = '';
-      function runOCR() {
-        hvDocConfig = new HVDocConfig();
-        hvDocConfig.setOCRDetails(
-          'https://ind-docs.hyperverge.co/v2.0/readKYC',
-          hvDocConfig.DocumentSide.FRONT,
-          { },
-          { },
+</body>
+<script>
+    function starOnboarding() {
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InlsYnVjYiIsImhhc2giOiJjYzRmZmRmZWY5YWZjNTI5MjhmY2Y5OTYzYmRiOTQ0NTJhZjFkZTVjMmJjOTQ1YTI2NTZhOWFiZWQ2YTgxYTQ4IiwiaWF0IjoxNjU4MTQ4NDk3LCJleHAiOjE2NTgxNTQ0OTcsImp0aSI6ImY2NTczNGQ4LWRkZmItNDQ0Ny1iMmI3LTc2NjM0OTFiNzBhYiJ9.nAgzigtLnneG3lSES6TwfnZvI2ulhEFF_5mzZet21psI52oCfyCFfyg7bubYplbL2OmvEgikncAiO9OZ_Wv_zr2oF1e-w8qoSMD24mhgN2zrTxN0yrFKZ5eUZ9yMUaXi_knrnL50PtpzBQ8JhCN0hqrUQV85MMRs5_Ktblxt3j8"
+        const hyperKycConfig = new HyperKycConfig(
+            accessToken,
+            "workflow-aviral-test",
+            "testing-for-noww"
         );
-        hvDocConfig.setShouldShowInstructionPage(true);
-		hvDocConfig.setShouldShowDocReviewScreen(true);
-		hvDocConfig.docTextConfig.setDocInstructionsTitle('DOC CAPTURE TITLE');
-	      	hvDocConfig.setChooseDocumentCaptureOption(true);
-	      hvDocConfig.docTextConfig.setDocChoiceScreenTitle('DOC TITLE');
-        HVDocsModule.start(hvDocConfig, callback1);
-	       
-      }
-      function runLiveness() {
-        hvFaceConfig = new HVFaceConfig();
-        hvFaceConfig.setShouldShowInstructionPage(true);
-        hvFaceConfig.setLivenessAPIParameters({
-          rejectFaceMask: 'yes',
-          allowEyesClosed: 'no',
-          allowMultipleFaces: 'no',
-        });
-        HVFaceModule.start(hvFaceConfig, callback2);
-	      
-      }
-	    
-	function runFaceMatch(){
-	 
-	 HVNetworkHelper.makeFaceMatchCall(faceImage, docImage, {}, {}, callback3);
-	
-	}
-	  
-       callback1 = (HVError, HVResponse) => {
-			if (HVError) {
-			  var para = document.createElement('p');
-			  var node = document.createTextNode(JSON.stringify(HVError));
-			  para.appendChild(node);
-			  var element = document.getElementById('div1');
-			  element.appendChild(para);
-			} else {
-			  var para = document.createElement('p');
-			  var node = document.createTextNode(JSON.stringify(HVResponse));
-			  para.appendChild(node);
-			  var element = document.getElementById('div1');
-			  element.appendChild(para);
-			  docImage = HVResponse.imgBase64;
-			}
-		};
-
-		 callback2 = (HVError, HVResponse) => {
-			if (HVError) {
-			  var para = document.createElement('p');
-			  var node = document.createTextNode(JSON.stringify(HVError));
-			  para.appendChild(node);
-			  var element = document.getElementById('div1');
-			  element.appendChild(para);
-		 
-			} else {
-			  var para = document.createElement('p');
-			  var node = document.createTextNode(JSON.stringify(HVResponse));
-			  para.appendChild(node);
-			  var element = document.getElementById('div1');
-			  element.appendChild(para);
-			  faceImage = HVResponse.imgBase64;
-			}
-		};
-		
-	 callback3 = (HVError, HVResponse) => {
-        if (HVError) {
-          var para = document.createElement('p');
-          var node = document.createTextNode(JSON.stringify(HVError));
-          para.appendChild(node);
-          var element = document.getElementById('div1');
-          element.appendChild(para);
-	 
-        } else {
-          var para = document.createElement('p');
-          var node = document.createTextNode(JSON.stringify(HVResponse));
-          para.appendChild(node);
-          var element = document.getElementById('div1');
-          element.appendChild(para);
+        HyperKYCModule.launch(hyperKycConfig, handler);
+    }
+    const handler = (HyperKycResult) => {
+        if (HyperKycResult.Cancelled) {
+          // user cancelled
+            console.log(HyperKycResult.Cancelled);
+        } else if (HyperKycResult.Failure) {
+          // failure
+            console.log(HyperKycResult.Failure);
+        } else if (HyperKycResult.Success) {
+          // success
+            console.log(HyperKycResult.Success);
         }
-      };
-    </script>
-  </body>
+    }
+</script>
+​
 </html>
