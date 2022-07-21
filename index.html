@@ -15,10 +15,10 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImE0NmIxMCIsImhhc2giOiI1MGY4ZjAzNTZiNWI1YzE2ODM2OTE5NzBkYTc0OTIwYzQwYjNiN2I1MjlmN2Q3MWY3MTkzZDdmNzhiMjUxNGMwIiwiaWF0IjoxNjU4NDE3NDUyLCJleHAiOjE2NTg0NTM0NTIsImp0aSI6IjNhZDZkZWY3LWZiMDctNGI1MS04NWVhLWU5OTJlM2E4NTMwNiJ9.nhW_YV6x719FHUsjiVjW1Ss91uLIEKdrItKJVB4sK2bU8KpEKRJQ0svvuuFUlUMXAdaLlOxJAWkHW3J8UhYseQ5XqZMzdju_yS0uaD3lVu0ifkPm8j7hzSGV_vwtQ6yKPow452KLEhC4TTZCDsDQhMqCuuxCHxbEv8LJFoyU-NE"
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Inl1YzV1ZCIsImhhc2giOiIwMjI5ZmI1ZThmYzA5NGE0ZWQ0ZjBmMDIxN2I5MjljNTM5NTkxZGM1MjJmYTZiNmEzM2U1MGE4ZWFkOGIwNTY5IiwiaWF0IjoxNjU4NDI0MjM2LCJleHAiOjE2NTg0NjAyMzYsImp0aSI6ImQ1MDk3YjAzLWFlODgtNDdhMy04NjgzLTU2M2IzNWYzNzNlNiJ9.DvJ0enX9t_ylveriCJWfhLFwyXgGbRb18tpOq7O9UjTOs460bOVHvAyAj5H7lyCTkHs3mUd0xm-TKRWTmwYt0OdEyMqdErY0R12vOwwvFoS1Ush0T9qQRuD-iO3b92tYHZRYBmMEpO2QemkkSNtu9t5DYsXzvr5ZYBkCHV9LMIM"
         const hyperKycConfig = new HyperKycConfig(
             accessToken,
-            "workflow_fE1ymfh",
+            "workflow_fantiger_onboarding",
             "testing-for-Fantiger"
         );
         HyperKYCModule.launch(hyperKycConfig, handler);
