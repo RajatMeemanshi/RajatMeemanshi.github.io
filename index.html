@@ -2,8 +2,7 @@
 <html lang="en">
 ​
 <head>
-    <script
-        src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@5.1.4/src/sdk.min.js"></script>
+    <script src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@5.2.0/src/sdk.min.js"></script>
 </head>
 ​
 <body>
@@ -23,18 +22,26 @@
         );
         HyperKYCModule.launch(hyperKycConfig, handler);
     }
-    const handler = (HyperKycResult) => {
-        if (HyperKycResult.Cancelled) {
+const handler = (HyperKycResult) => {
+    switch(HyperKycResult.status) {
+      case "user_cancelled":
           // user cancelled
-            console.log(HyperKycResult.Cancelled);
-        } else if (HyperKycResult.Failure) {
-          // failure
-            console.log(HyperKycResult.Failure);
-        } else if (HyperKycResult.Success) {
-          // success
-            console.log(HyperKycResult.Success);
-        }
-    }
+            console.log("user cancelled");
+      break;
+      case "error":
+        // failure
+            console.log("error");
+      break;
+      case "auto_approved":
+            console.log("auto approved");
+      case "auto_declined":
+            console.log("auto declined");
+      case "needs_review":
+            console.log("needs review");
+        // workflow success
+      break;
+		}
+}
 </script>
 ​
 </html>
