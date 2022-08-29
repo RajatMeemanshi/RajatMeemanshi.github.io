@@ -14,8 +14,8 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InZlcWR0ZCIsImhhc2giOiIxOGQxYjY3OWZkZWM5ZmY2NDM0MGQ4MDI1YjdiNmMxZjZmZDA1MjUwYmFlNjUxODRlYjBjNmE1NWExNTVmYmIyIiwiaWF0IjoxNjU5MDc2OTk2LCJleHAiOjE2NTkxMTI5OTYsImp0aSI6ImI2YjlkNDgwLWY4M2QtNGJjOS1iOWE5LWU0YmNlNmI1ZTkwNiJ9.VUOhHRe7EKBqO0a0TvnAn3XYKuw_iftBSJa75iUGw9pLiv2OTaYjbiUDgqluw3btehANWLsA33NZsXMOKrBxCKLCWhaK1momLvkXGD4AuLXMDQbOgL1qab8sZXqkBjD1Xj2ZNwTfBciaVY1e-6GxTcIn8w9xK7Jubto19kdRny0"
-        const hyperKycConfig = new HyperKycConfig(
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjYxNzYzNzgwLCJleHAiOjE2NjE3OTk3ODAsImp0aSI6IjE4NzcyZDZkLWI4MDEtNGFjYS05MGQ1LWJlOWJlOTEwNjUwYyJ9.mV94TyxXxgL1cpLvzq8Y9Y8KocAM1t9fAvazin-lIqARODWLzUTcn7q7DmXrsb-c8BVbZBrbeUtsc4joD9HeRL8ClAHaVT1-Ahd5Jl_b8cytbkqCcIOpLYt3tNSmA6KdA0MiczP7S__xYrSki-hYJjsPPcnQ9o5R3yue3MeE8gE"
+	const hyperKycConfig = new HyperKycConfig(
             accessToken,
             "bvn_workflow",
             "testing-for-Zilla"
@@ -24,9 +24,11 @@
     }
 const handler = (HyperKycResult) => {
     switch(HyperKycResult.status) {
+      console.log(HyperKycResult);
       case "user_cancelled":
           // user cancelled
             console.log("user cancelled");
+	    
       break;
       case "error":
         // failure
