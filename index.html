@@ -18,7 +18,7 @@
         //const base64String = "";
         const hyperKycConfig = new HyperKycConfig(
             accessToken,
-            "mezesse-test-workflow",
+            "mezesse_test_workflow",
             "testing-mezesse-noOCR"
         );
         
@@ -49,6 +49,7 @@
           allowMultipleFaces: 'no',
           rejectBlur: 'yes',
         });
+        
         HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
         //faceImageBase64String = imageBase64;
     
