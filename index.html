@@ -14,8 +14,8 @@
     </div>
     <script>
     	function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImtsMjlvMSIsImhhc2giOiJkNzM3YmZhNDFjZGI3NDFhODg2N2I0ZmY2MGI0ZGE1Mzc3NWE1ZWRlMWJkNTU5MmYwMWNlZmRiOTY5OTdhYjYwIiwiaWF0IjoxNjYyOTc3Nzk4LCJleHAiOjE2NjMwMTM3OTgsImp0aSI6IjRlOWJmZGJhLTFmYjItNGZjMi04ZTRhLWViZTU5ODdlYmYwMyJ9.xzF8woMRwWSfsph0v0U__l1EbqCtocSGMHDWl2LZXjOkHlYzA8_SX43jyPFLQAlsSSa19y1TnLVuyLkr92eyryJ30qupxr_c4OOuWZvFXhgOANwd0VAfFeuH6fVp_4X35nHTz8-cYFyCXpXoQFx9kC4FKD_d-TGXvim6aae4jyU"
-//         //const base64String = "";
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjYzNjcyOTk2LCJleHAiOjE2NjM3MDg5OTYsImp0aSI6IjE0YjJhZDQzLTkyY2UtNGQ4NS1iMDI3LTliNzFkYmExNWEzYyJ9.gDu8pH6LcsRxVo3GSZw-dtFZ03koXLYc6YV7_aHc105-9ynBcHZjqKwPLXsXSC87pmN39fWylSs4YTtJwzmcfvR8Pi28_PKHmiTYmu33LQI21Ua_QkXSril15aB1upaHu4c6t-MEgB7aWUfjqnjyDmNxiLQ72rGDn3L8SF63xo0"
+        //const base64String = "";
 //         const hyperKycConfig = new HyperKycConfig(
 //             accessToken,
 //             "mezesse_test_workflow",
@@ -24,6 +24,7 @@
         
 //        
         HyperSnapSDK.init(jwtToken, HyperSnapParams.Region.India);
+        HyperSnapSDK.startUserSession();
   
     }
     const handler = (HyperKycResult) => {
