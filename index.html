@@ -25,6 +25,7 @@
 //        
         HyperSnapSDK.init(jwtToken, HyperSnapParams.Region.India);
         HyperSnapSDK.startUserSession();
+        runLiveness();
   
     }
     const handler = (HyperKycResult) => {
