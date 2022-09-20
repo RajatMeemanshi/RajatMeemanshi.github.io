@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@5.2.1/src/sdk.min.js"></script>
+    <script src="https://hv-camera-web-sg.s3-ap-southeast-1.amazonaws.com/hyperverge-web-sdk@3.3.7/src/sdk.min.js"></script>
   </head>
   <body>
     <center><h2>Hyperverge WebSDK Demo</h2></center>
@@ -15,14 +15,15 @@
     <script>
     	function starOnboarding() {
         const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImtsMjlvMSIsImhhc2giOiJkNzM3YmZhNDFjZGI3NDFhODg2N2I0ZmY2MGI0ZGE1Mzc3NWE1ZWRlMWJkNTU5MmYwMWNlZmRiOTY5OTdhYjYwIiwiaWF0IjoxNjYyOTc3Nzk4LCJleHAiOjE2NjMwMTM3OTgsImp0aSI6IjRlOWJmZGJhLTFmYjItNGZjMi04ZTRhLWViZTU5ODdlYmYwMyJ9.xzF8woMRwWSfsph0v0U__l1EbqCtocSGMHDWl2LZXjOkHlYzA8_SX43jyPFLQAlsSSa19y1TnLVuyLkr92eyryJ30qupxr_c4OOuWZvFXhgOANwd0VAfFeuH6fVp_4X35nHTz8-cYFyCXpXoQFx9kC4FKD_d-TGXvim6aae4jyU"
-        //const base64String = "";
-        const hyperKycConfig = new HyperKycConfig(
-            accessToken,
-            "mezesse_test_workflow",
-            "testing-mezesse-noOCR"
-        );
+//         //const base64String = "";
+//         const hyperKycConfig = new HyperKycConfig(
+//             accessToken,
+//             "mezesse_test_workflow",
+//             "testing-mezesse-noOCR"
+//         );
         
-        HyperKYCModule.launch(hyperKycConfig, handler);
+//        
+        HyperSnapSDK.init(jwtToken, HyperSnapParams.Region.India);
   
     }
     const handler = (HyperKycResult) => {
@@ -50,7 +51,7 @@
           rejectBlur: 'yes',
         });
         
-        HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
+        HVDocsModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
         //faceImageBase64String = imageBase64;
     
     //callback for Selfie     
