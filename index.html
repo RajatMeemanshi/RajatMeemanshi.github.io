@@ -53,8 +53,7 @@
           rejectBlur: 'yes',
         });
         
-        HVDocsModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
-        //faceImageBase64String = imageBase64;
+        
     
     //callback for Selfie     
     callback = (HVError, HVResponse) => {
@@ -69,6 +68,8 @@
             var attempts = HVResponse.getAttemptsCount();
           }
         };
+        HVDocsModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
+        //faceImageBase64String = imageBase64;
       }
       
      // Function wrapper for documents button
