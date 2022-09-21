@@ -54,12 +54,14 @@
           if(HVError) {
             var errorCode = HVError.getErrorCode();
             var errorMessage = HVError.getErrorMessage();
+            console.log(HVError);
           } 
           else if(HVResponse) {
             var apiResults = HVResponse.getApiResult();
             var apiHeaders = HVResponse.getApiHeaders();
             faceImageBase64 = HVResponse.getImageBase64();
             var attempts = HVResponse.getAttemptsCount();
+            console.log(HVResponse);
           }
         console.log("test");
         };
