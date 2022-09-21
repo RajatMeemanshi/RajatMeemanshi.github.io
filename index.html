@@ -61,8 +61,9 @@
             faceImageBase64 = HVResponse.getImageBase64();
             var attempts = HVResponse.getAttemptsCount();
           }
+        console.log("test");
         };
-        HVFaceModule.start(hvConfig, {});// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
+        HVFaceModule.start(hvConfig);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
         //faceImageBase64String = imageBase64;
         HyperSnapSDK.endUserSession();
         
