@@ -20,12 +20,7 @@
             "workflow-rajat-test",
             "testing-mezesse"
         );
-        
-       
-        window.HyperKYCModule.launch(hyperKycConfig, handler);
-  
-    }
-    const handler = (HyperKycResult) => {
+         const handler = (HyperKycResult) => {
         console.log(HyperKycResult)
         HyperKycResult.Status - for all statuses going forward from 5.2.0
         if (HyperKycResult.Cancelled) {
@@ -39,6 +34,11 @@
             console.log(HyperKycResult.Success);
         }
     }
+       
+        window.HyperKYCModule.launch(hyperKycConfig, handler);
+  
+    }
+   
       function runLiveness(){
       //For Face Capture Screen
        var hvConfig = new HVFaceConfig();
