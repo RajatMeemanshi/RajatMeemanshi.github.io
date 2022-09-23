@@ -14,32 +14,30 @@
     </div>
     <script>
     	function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjYzNzUxNzkwLCJleHAiOjE2NjM3ODc3OTAsImp0aSI6IjJkNDMyMzVlLWVkOWItNGYxNy1iM2U5LWZjZjU2MjJlY2RiZSJ9.kaBifxUAoMb0_KcfOhLsSxpWnIuDrZtfGSX37xA96BD-I5_J0NKDOEo6L3YWjI6Qtbg7TMJJaDwxlNQK-L89qLZVASOhJCkJs7D5DLV5fHk-v3PYku4uw6xPVgg10X81zbTi_VoKIosB3-sd71UFuF1MKIn3qCm5JiZOz9-1USU"      //const base64String = "";
-//         const hyperKycConfig = new HyperKycConfig(
-//             accessToken,
-//             "mezesse_test_workflow",
-//             "testing-mezesse-noOCR"
-//         );
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjYzOTM1NTYzLCJleHAiOjE2NjM5NzE1NjMsImp0aSI6IjExYzUwNDE3LWMxYTktNDllMy1hNGIxLWQ1MDZkYjc1NmJhYiJ9.JCjCc2K3cspkow-n4yy3Hc_CkMr57xO3oSpKGgwVPlk53QTky8RTxuT0vSuE2LEf0mOhptDiuZBBqUzcUDD8XN7FkDginEU3-ZM5hI-jgu5uKdKEgenhJ_SCaxqgw7LM8b5JOi-B2jrp_WzON4SbBGxl7e3njIxvAEV0_zpffLw"
+        const hyperKycConfig = new HyperKycConfig(
+            accessToken,
+            "workflow-rajat-test",
+            "testing-mezesse"
+        );
         
-//        
-        HyperSnapSDK.init(accessToken, HyperSnapParams.Region.India);
-        HyperSnapSDK.startUserSession();
-        runLiveness();
+       
+        window.HyperKYCModule.launch(hyperKycConfig, handler);
   
     }
     const handler = (HyperKycResult) => {
         console.log(HyperKycResult)
-        //HyperKycResult.Status - for all statuses going forward from 5.2.0
-//         if (HyperKycResult.Cancelled) {
-//           // user cancelled
-//            console.log(HyperKycResult.Cancelled);
-//         } else if (HyperKycResult.Failure) {
-//           // failure
-//             console.log(HyperKycResult.Failure);
-//         } else if (HyperKycResult.Success) {
-//           // success
-//             console.log(HyperKycResult.Success);
-//         }
+        HyperKycResult.Status - for all statuses going forward from 5.2.0
+        if (HyperKycResult.Cancelled) {
+          // user cancelled
+           console.log(HyperKycResult.Cancelled);
+        } else if (HyperKycResult.Failure) {
+          // failure
+            console.log(HyperKycResult.Failure);
+        } else if (HyperKycResult.Success) {
+          // success
+            console.log(HyperKycResult.Success);
+        }
     }
       function runLiveness(){
       //For Face Capture Screen
