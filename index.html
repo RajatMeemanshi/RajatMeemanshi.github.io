@@ -49,10 +49,8 @@
         HyperSnapSDK.startUserSession();
 var hvFaceConfig = new HVFaceConfig(); // First create a hvdoc config object
 hvFaceConfig.setShouldShowInstructionPage(true);
-
-HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
-
-callback = (HVError, HVResponse) => {
+        
+        callback = (HVError, HVResponse) => {
   if(HVError) {
     var errorCode = HVError.getErrorCode();
     var errorMessage = HVError.getErrorMessage();
@@ -62,10 +60,10 @@ callback = (HVError, HVResponse) => {
     var apiHeaders = HVResponse.getApiHeaders();
     var imageBase64 = HVResponse.getImageBase64();
     var attempts = HVResponse.getAttemptsCount();
+      
+      
   }
-};
-        
-        HyperSnapSDK.extractExifData((hvExifData)=>{
+           HyperSnapSDK.extractExifData((hvExifData)=>{
   console.log("Datetime : " + hvExifData.getDatetime())
   console.log("Latitude : " + hvExifData.getLatitude())
   console.log("Longitude : " +hvExifData.getLongitude())
@@ -78,6 +76,13 @@ callback = (HVError, HVResponse) => {
   console.log("Country : " + hvExifData.getCountry())
   console.log("Country Code : " + hvExifData.getCountryCode())
 })
+};
+
+HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
+
+
+        
+ 
     }
 </script>
 
