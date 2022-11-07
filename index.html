@@ -15,35 +15,69 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InlsYnVjYiIsImhhc2giOiJjYzRmZmRmZWY5YWZjNTI5MjhmY2Y5OTYzYmRiOTQ0NTJhZjFkZTVjMmJjOTQ1YTI2NTZhOWFiZWQ2YTgxYTQ4IiwiaWF0IjoxNjY3NTQ3NDc3LCJleHAiOjE2Njc1ODM0NzcsImp0aSI6IjQwZTVlOGM4LTU4MmItNGMxMS04Y2I3LTczMzc1YzZlOTQxOSJ9.pW-5YEByQu_5YhpKSVhv0hAmdd3sds0GTelCWtupHKN1snAhi2EPK66a0WXbyECMuyrPSvsE1XU2xgyDdhCKlF_Pvo0Bpdgljl9UPJcDGDy7nB3wLBJb4y0jTQCEZbyRv0Jd2nfGcTpmnBuX2q7v0QRHQylGlydj0l2hKqoi-rw"
-        const hyperKycConfig = new HyperKycConfig(
-            accessToken,
-            "workflow-aviral-test",
-            "rajat-test-"+(Math.random()*10000)
-        );
+//         const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InlsYnVjYiIsImhhc2giOiJjYzRmZmRmZWY5YWZjNTI5MjhmY2Y5OTYzYmRiOTQ0NTJhZjFkZTVjMmJjOTQ1YTI2NTZhOWFiZWQ2YTgxYTQ4IiwiaWF0IjoxNjY3NTQ3NDc3LCJleHAiOjE2Njc1ODM0NzcsImp0aSI6IjQwZTVlOGM4LTU4MmItNGMxMS04Y2I3LTczMzc1YzZlOTQxOSJ9.pW-5YEByQu_5YhpKSVhv0hAmdd3sds0GTelCWtupHKN1snAhi2EPK66a0WXbyECMuyrPSvsE1XU2xgyDdhCKlF_Pvo0Bpdgljl9UPJcDGDy7nB3wLBJb4y0jTQCEZbyRv0Jd2nfGcTpmnBuX2q7v0QRHQylGlydj0l2hKqoi-rw"
+//         const hyperKycConfig = new HyperKycConfig(
+//             accessToken,
+//             "workflow-aviral-test",
+//             "rajat-test-"+(Math.random()*10000)
+//         );
         
-           hyperKycConfig.setInputs(
-              {
-                 "countryId":"lka"
-              }
-        );
+//            hyperKycConfig.setInputs(
+//               {
+//                  "countryId":"lka"
+//               }
+//         );
         
-        HyperKYCModule.launch(hyperKycConfig, handler);
+//         HyperKYCModule.launch(hyperKycConfig, handler);
   
-    }
-    const handler = (HyperKycResult) => {
-        console.log(HyperKycResult)
-        //HyperKycResult.Status - for all statuses going forward from 5.2.0
-//         if (HyperKycResult.Cancelled) {
-//           // user cancelled
-//            console.log(HyperKycResult.Cancelled);
-//         } else if (HyperKycResult.Failure) {
-//           // failure
-//             console.log(HyperKycResult.Failure);
-//         } else if (HyperKycResult.Success) {
-//           // success
-//             console.log(HyperKycResult.Success);
-//         }
+//     }
+//     const handler = (HyperKycResult) => {
+//         console.log(HyperKycResult)
+//         //HyperKycResult.Status - for all statuses going forward from 5.2.0
+// //         if (HyperKycResult.Cancelled) {
+// //           // user cancelled
+// //            console.log(HyperKycResult.Cancelled);
+// //         } else if (HyperKycResult.Failure) {
+// //           // failure
+// //             console.log(HyperKycResult.Failure);
+// //         } else if (HyperKycResult.Success) {
+// //           // success
+// //             console.log(HyperKycResult.Success);
+// //         }
+        
+        HyperSnapSDK.init("Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InlsYnVjYiIsImhhc2giOiJjYzRmZmRmZWY5YWZjNTI5MjhmY2Y5OTYzYmRiOTQ0NTJhZjFkZTVjMmJjOTQ1YTI2NTZhOWFiZWQ2YTgxYTQ4IiwiaWF0IjoxNjY3ODA1Njc0LCJleHAiOjE2Njc4NDE2NzQsImp0aSI6ImFhMjE4ZDBmLTQ1MWItNDQ3Mi05MWE2LWEzOTcxYTgyNGZiNCJ9.ehhMDQDYezxgymH-JwL-cytvL_tE1bWESm3prj7WzKMcmiS3vaLgTBP5I-PYK_yW-uhHMfxta7VYBZ19qVdO0sjThnFcHH8B5TMFEWRlgFzsm2Ka5Sk9aM2DjQZ4pifD1ymICtqOXl4042VyXP9zmqbSTTGvIMxB3NqKQnR-DMU", HyperSnapParams.Region.India);
+        HyperSnapSDK.startUserSession();
+var hvFaceConfig = new HVFaceConfig(); // First create a hvdoc config object
+hvFaceConfig.setShouldShowInstructionPage(true);
+
+HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
+
+callback = (HVError, HVResponse) => {
+  if(HVError) {
+    var errorCode = HVError.getErrorCode();
+    var errorMessage = HVError.getErrorMessage();
+  } 
+  else if(HVResponse) {
+    var apiResults = HVResponse.getApiResult();
+    var apiHeaders = HVResponse.getApiHeaders();
+    var imageBase64 = HVResponse.getImageBase64();
+    var attempts = HVResponse.getAttemptsCount();
+  }
+};
+        
+        HyperSnapSDK.extractExifData((hvExifData)=>{
+  console.log("Datetime : " + hvExifData.getDatetime())
+  console.log("Latitude : " + hvExifData.getLatitude())
+  console.log("Longitude : " +hvExifData.getLongitude())
+  console.log("Browser : " +hvExifData.getBrowser())
+  console.log("BrowserVersion : " +hvExifData.getBrowserVersion())
+  console.log("Device : " +hvExifData.getDevice())
+  console.log("UserAgent : " +hvExifData.getUserAgent())
+  console.log("IP Address : " + hvExifData.getIpAddress())
+  console.log("City : " + hvExifData.getCity())
+  console.log("Country : " + hvExifData.getCountry())
+  console.log("Country Code : " + hvExifData.getCountryCode())
+})
     }
 </script>
 
