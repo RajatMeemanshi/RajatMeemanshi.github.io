@@ -45,9 +45,10 @@
 //             console.log(HyperKycResult.Success);
 //         }
         
-        HyperSnapSDK.init("Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InlsYnVjYiIsImhhc2giOiJjYzRmZmRmZWY5YWZjNTI5MjhmY2Y5OTYzYmRiOTQ0NTJhZjFkZTVjMmJjOTQ1YTI2NTZhOWFiZWQ2YTgxYTQ4IiwiaWF0IjoxNjY3ODA1Njc0LCJleHAiOjE2Njc4NDE2NzQsImp0aSI6ImFhMjE4ZDBmLTQ1MWItNDQ3Mi05MWE2LWEzOTcxYTgyNGZiNCJ9.ehhMDQDYezxgymH-JwL-cytvL_tE1bWESm3prj7WzKMcmiS3vaLgTBP5I-PYK_yW-uhHMfxta7VYBZ19qVdO0sjThnFcHH8B5TMFEWRlgFzsm2Ka5Sk9aM2DjQZ4pifD1ymICtqOXl4042VyXP9zmqbSTTGvIMxB3NqKQnR-DMU", HyperSnapParams.Region.India);
+        HyperSnapSDK.init("Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjY4MTc0MDIzLCJleHAiOjE2NjgyMTAwMjMsImp0aSI6IjFiMDZhYjFhLTFhNGMtNGUxZC1iYTliLTRiYWU4MjcxYzkxYSJ9.XzqPf3xw0EpG1WSe9voAltSc1UkAaUiAIBo96M7E9008WK-NAG2oDe-P8NkiJ6B0xNbw-BXDNZdf_hGO78WQ8wtf1k04oeHYPJ-w2eTlUlJgff_CYS_LIqDSddnXlZjpjwamfUQfdh0kv5c6F8FSDbNzvsdRktHRmhMWfy7BdCU");
         HyperSnapSDK.startUserSession();
-var hvFaceConfig = new HVFaceConfig(); // First create a hvdoc config object
+var hvFaceConfig = new HVFaceConfig();
+        hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
 hvFaceConfig.setShouldShowInstructionPage(true);
         
         callback = (HVError, HVResponse) => {
