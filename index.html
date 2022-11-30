@@ -15,12 +15,16 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImxkemZ6byIsImhhc2giOiI2ZGIyZTJhZGZmMzhiNmExZGE4MDQwZWY5YmE1NTI1ZjBiY2I4MDY0NzUxYjRkYThkMWFkM2Q3YzBkMTYzODU0IiwiaWF0IjoxNjY5NzIyOTA0LCJleHAiOjE2Njk3NTg5MDQsImp0aSI6IjFhMDJiMThiLThlYjMtNDU1Ni1iMTBiLTgzMGYyM2RmNjMyMyJ9.ny2vuvbVNgh9mFgywkq1c48ZVxUIx4EuYIPYHzjtfXr6CBJ_ExJbpo14VQE5vLl_DrdBVPO7xvYNf50TnhfVCzP_uJ3Oq6_s_2w7dKqasJstECuSD239wdnUg_2U7dfzBe2GzW70xrNxNb72UEWlN-TwQ4xYTaORhvaq1tQhjpg"
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImxkemZ6byIsImhhc2giOiI2ZGIyZTJhZGZmMzhiNmExZGE4MDQwZWY5YmE1NTI1ZjBiY2I4MDY0NzUxYjRkYThkMWFkM2Q3YzBkMTYzODU0IiwiaWF0IjoxNjY5Nzg1MzAyLCJleHAiOjE2Njk4MjEzMDIsImp0aSI6IjhmZjlhNzhlLWJhOWYtNDhmYS04YzdkLTljNjU2M2EzYzYwMiJ9.tbnvPocBSXYxUhumf6KtfjiWeDFfFyfYDeWadviEO7ZJJt3ntOGExx0nahjztSroFsFk-Dq9k8ke9KKLe1nzL8vSg1LIsdoDXHfoIKX0MGDcLwefuVBx30QwSjE9D9yzxIdBbSI_iwrtCIBUf7JhtzcHAU2si1HExYxR2AkwRMI"
         const hyperKycConfig = new HyperKycConfig(
             accessToken,
             "ind_ckyc_digilocker_acko",
             "rajat-HV-test-"+Math.random()
         );
+        
+        const fontStyleSheet = "https://fonts.googleapis.com/css?family=Inter";
+
+        hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
         
 //            hyperKycConfig.setInputs(
 //               {
