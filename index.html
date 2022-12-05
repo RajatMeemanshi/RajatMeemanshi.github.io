@@ -55,7 +55,7 @@
 var hvFaceConfig = new HVFaceConfig();
         hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
 hvFaceConfig.setShouldShowInstructionPage(true);
-        hvFaceConfig.setShouldUseSignature(true);
+        //hvFaceConfig.setShouldUseSignature(true);
         
         callback = (HVError, HVResponse) => {
   if(HVError) {
@@ -67,6 +67,7 @@ hvFaceConfig.setShouldShowInstructionPage(true);
     var apiHeaders = HVResponse.getApiHeaders();
     var imageBase64 = HVResponse.getImageBase64();
     var attempts = HVResponse.getAttemptsCount();
+      console.log(HVResponse);
       
     console.log(apiHeaders);
       
