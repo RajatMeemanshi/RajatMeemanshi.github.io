@@ -3,7 +3,7 @@
 
 <head>
     <script
-        src="https://hv-camera-web-sg.s3.ap-southeast-1.amazonaws.com/hyperverge-web-sdk@5.2.4/src/sdk.min.js"></script>
+        src="https://hv-camera-web-sg.s3.ap-southeast-1.amazonaws.com/hyperverge-web-sdk@5.3.0/src/sdk.min.js"></script>
 </head>
 
 <body>
@@ -15,80 +15,80 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjcwMjA3Njk0LCJleHAiOjE2NzAyNDM2OTQsImp0aSI6IjdjYWZiMzMyLWQwNzEtNGQyZS1iMjRhLTQ0MzQ0M2YzYWFmOCJ9.GSmrfs6ZywBSIQd7l0fFlDcLmJH1J7NBx1jE-Fy4ZnyQiOscR__YjfnSAwYADHng-MbHC85BEWzsCbEbi-eJ1elF8SjZKQgl7Ddepa-WTaanaNgD2h--Ng-HrZy0IzjYBWi_4IgCa5mjBXBqdosZRv0iP5nWrFlIgvEEWJfEXxQ"
-        //         const hyperKycConfig = new HyperKycConfig(
-//             accessToken,
-//             "ind_ckyc_digilocker_acko",
-//             "rajat-HV-test-"+Math.random()
-//         );
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjcwMjE5NjUyLCJleHAiOjE2NzAyNTU2NTIsImp0aSI6IjllYzE0YWJiLTFjZDItNGRhZC05NmI1LWJlOThjNjM3OWI4YSJ9.atBbewBHt-RoilAWcEP8MHH9YWuSKIgMkAixqnx1lJX2x7q3qOQR_K7ZlQ8_I4L6iLVOlqO3PL3FWXrujt_4Tx8U4XT3ZUOW-Ug4UzLJQfC3eXY0GgfRst6KKxmbdq7mIZYwMwuedsKybRUpjH8tvPGaPIvsgpnMuBDOEcQQp64"
+            const hyperKycConfig = new HyperKycConfig(
+            accessToken,
+            "ind_ckyc_digilocker_acko",
+            "rajat-HV-test-"+Math.random()
+        );
         
-//         const fontStyleSheet = "https://fonts.googleapis.com/css?family=Inter";
+        const fontStyleSheet = "https://fonts.googleapis.com/css?family=Inter";
 
-//         hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
+        hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
         
-// //            hyperKycConfig.setInputs(
-// //               {
-// //                  "countryId":"lka"
-// //               }
-// //         );
+//            hyperKycConfig.setInputs(
+//               {
+//                  "countryId":"lka"
+//               }
+//         );
         
       
   
     
-//     const handler = (HyperKycResult) => {
-//         console.log(HyperKycResult)
-//         if (HyperKycResult.Cancelled) {
-//           // user cancelled
-//            console.log(HyperKycResult.Cancelled);
-//         } else if (HyperKycResult.Failure) {
-//           // failure
-//             console.log(HyperKycResult.Failure);
-//         } else if (HyperKycResult.Success) {
-//           // success
-//             console.log(HyperKycResult.Success);
-//         }
-//     }
-//       HyperKYCModule.launch(hyperKycConfig, handler);
+    const handler = (HyperKycResult) => {
+        console.log(HyperKycResult)
+        if (HyperKycResult.Cancelled) {
+          // user cancelled
+           console.log(HyperKycResult.Cancelled);
+        } else if (HyperKycResult.Failure) {
+          // failure
+            console.log(HyperKycResult.Failure);
+        } else if (HyperKycResult.Success) {
+          // success
+            console.log(HyperKycResult.Success);
+        }
+    }
+      HyperKYCModule.launch(hyperKycConfig, handler);
         
-        HyperSnapSDK.init(accessToken,HyperSnapParams.Region.India);
-        HyperSnapSDK.startUserSession();
-var hvFaceConfig = new HVFaceConfig();
-        hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
-hvFaceConfig.setShouldShowInstructionPage(true);
-        //hvFaceConfig.setShouldUseSignature(true);
+//         HyperSnapSDK.init(accessToken,HyperSnapParams.Region.India);
+//         HyperSnapSDK.startUserSession();
+// var hvFaceConfig = new HVFaceConfig();
+//         hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
+// hvFaceConfig.setShouldShowInstructionPage(true);
+//         //hvFaceConfig.setShouldUseSignature(true);
         
-        callback = (HVError, HVResponse) => {
-  if(HVError) {
-    var errorCode = HVError.getErrorCode();
-    var errorMessage = HVError.getErrorMessage();
-  } 
-  else if(HVResponse) {
-    var apiResults = HVResponse.getApiResult();
-    var apiHeaders = HVResponse.getApiHeaders();
-    var imageBase64 = HVResponse.getImageBase64();
-    var attempts = HVResponse.getAttemptsCount();
-      console.log(HVResponse);
+//         callback = (HVError, HVResponse) => {
+//   if(HVError) {
+//     var errorCode = HVError.getErrorCode();
+//     var errorMessage = HVError.getErrorMessage();
+//   } 
+//   else if(HVResponse) {
+//     var apiResults = HVResponse.getApiResult();
+//     var apiHeaders = HVResponse.getApiHeaders();
+//     var imageBase64 = HVResponse.getImageBase64();
+//     var attempts = HVResponse.getAttemptsCount();
+//       console.log(HVResponse);
       
-    console.log(apiHeaders);
+//     console.log(apiHeaders);
       
       
-  }
-           HyperSnapSDK.extractExifData((hvExifData)=>{
-  console.log("Datetime : " + hvExifData.getDatetime())
-  console.log("Latitude : " + hvExifData.getLatitude())
-  console.log("Longitude : " +hvExifData.getLongitude())
-  console.log("Browser : " +hvExifData.getBrowser())
-  console.log("BrowserVersion : " +hvExifData.getBrowserVersion())
-  console.log("Device : " +hvExifData.getDevice())
-  console.log("UserAgent : " +hvExifData.getUserAgent())
-  console.log("IP Address : " + hvExifData.getIpAddress())
-  console.log("City : " + hvExifData.getCity())
-  console.log("Country : " + hvExifData.getCountry())
-  console.log("Country Code : " + hvExifData.getCountryCode())
-})
-};
+//   }
+//            HyperSnapSDK.extractExifData((hvExifData)=>{
+//   console.log("Datetime : " + hvExifData.getDatetime())
+//   console.log("Latitude : " + hvExifData.getLatitude())
+//   console.log("Longitude : " +hvExifData.getLongitude())
+//   console.log("Browser : " +hvExifData.getBrowser())
+//   console.log("BrowserVersion : " +hvExifData.getBrowserVersion())
+//   console.log("Device : " +hvExifData.getDevice())
+//   console.log("UserAgent : " +hvExifData.getUserAgent())
+//   console.log("IP Address : " + hvExifData.getIpAddress())
+//   console.log("City : " + hvExifData.getCity())
+//   console.log("Country : " + hvExifData.getCountry())
+//   console.log("Country Code : " + hvExifData.getCountryCode())
+// })
+// };
 
-HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
+// HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
 
 
         
