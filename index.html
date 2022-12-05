@@ -55,6 +55,7 @@
 var hvFaceConfig = new HVFaceConfig();
         hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
 hvFaceConfig.setShouldShowInstructionPage(true);
+        hvFaceConfig.setShouldUseSignature(true);
         
         callback = (HVError, HVResponse) => {
   if(HVError) {
