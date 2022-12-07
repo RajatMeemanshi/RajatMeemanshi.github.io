@@ -18,8 +18,8 @@
         const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImxkemZ6byIsImhhc2giOiI2ZGIyZTJhZGZmMzhiNmExZGE4MDQwZWY5YmE1NTI1ZjBiY2I4MDY0NzUxYjRkYThkMWFkM2Q3YzBkMTYzODU0IiwiaWF0IjoxNjcwNDAzODkxLCJleHAiOjE2NzA0Mzk4OTEsImp0aSI6Ijk2ZGJlNDA1LWRhMTItNDdiYS1iODRhLWY0NTI1ODJkYjMzYyJ9.SdCWOcQjYTiVk817Egg6AGkkZaF8kaZJVsXdw3yarCUMpf8Shxlo1iWa76ixVlod5sWDXcOcSg0motLg9giHC_PQDq2XDtMnPH90EpOzbdi95PoaLRpOks84G2rspnTyL_AxXijTLSejy9P9pgSWgaAh2n-XQAnj9R4IkcmlNms"
         const hyperKycConfig = new HyperKycConfig(
             accessToken,
-            "ind_ckyc_digilocker_acko",
-            "rajat-HV-test-"+Math.random()
+            "ind_ckyc_digilocker_acko_mobile",
+            "rajat-flutter-test-0022"
         );
         
         const fontStyleSheet = "https://fonts.googleapis.com/css?family=Inter";
@@ -28,7 +28,9 @@
         
            hyperKycConfig.setInputs(
               {
-                 "fullName":"Rajat Rangacharya Meemanshi"
+                 "fullName":"Rajat Rangacharya Meemanshi",
+                  "panNumber":"CUKPM9540B",
+                  "dob":"27-02-1997"
               }
         );
         
