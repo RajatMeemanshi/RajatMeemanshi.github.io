@@ -63,7 +63,7 @@ hvFaceConfig.setShouldShowInstructionPage(true);
   if(HVError) {
     var errorCode = HVError.getErrorCode();
     var errorMessage = HVError.getErrorMessage();
-     var imageBase64 = HVError.getImageBase64();
+     console.log(HVError);
   } 
   else if(HVResponse) {
     var apiResults = HVResponse.getApiResult();
