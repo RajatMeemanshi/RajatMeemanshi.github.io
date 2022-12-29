@@ -15,40 +15,40 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImxkemZ6byIsImhhc2giOiI2ZGIyZTJhZGZmMzhiNmExZGE4MDQwZWY5YmE1NTI1ZjBiY2I4MDY0NzUxYjRkYThkMWFkM2Q3YzBkMTYzODU0IiwiaWF0IjoxNjcxNjk4MjY1LCJleHAiOjE2NzE3MzQyNjUsImp0aSI6ImEyNTEzNTRlLWI2OTktNDg3Yy1hNGQyLTFlOTJlMzAyYjljYSJ9.NKhiBgHHGRuKHBg3dVfl6suXMg2lMmibRkpMJda43fvVCsWR18mbQZtrJOw6IT-DoMAlRHDPx3YrkzQdqHgZLKzufrA5xOuiACTmYveffye0WCzwBAJT0Z_vcxW4Y7wTLX_dBLG4PY7-X699ZahFVOhUHzcjTA7_nXJk2GP1qoU"
-        const hyperKycConfig = new HyperKycConfig(
-            accessToken,
-            "ind_ckyc_digilocker_acko",
-            "rajat-test-"+Math.random()
-        );
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjA1ODhkNiIsImhhc2giOiJiZDAxNzgxZWIxYWJhMTUxNDFmYWY0MzY1YTE2ZTllMzAxNWYzMzNmNTQ5M2ZlY2RlYjU3NGYyMzhiMzBjMDZmIiwiaWF0IjoxNjcyMzA5NTk0LCJleHAiOjE2NzIzNDU1OTQsImp0aSI6IjBjYTg3YzA2LWYwNzQtNDQ2My05NWZjLTc2ZDBlZWM1ODg3ZCJ9.LDeMz4r34LQ-PWHAayKaPN64VegiNBVwSUJoAYSN9vbre9VJRJm-Lqs07Dz7R1TiybqayDmw3gZ5PS5Y4Tp62frny8gyVpcl9lPrr7_6Vq41XcmFAQ2zNdBXL5HtvPoG9FbgJYwoMktWExI_52rdTTSViHNCvSIvq8oSLGo4Lcw"
+        //         const hyperKycConfig = new HyperKycConfig(
+//             accessToken,
+//             "ind_ckyc_digilocker_acko",
+//             "rajat-test-"+Math.random()
+//         );
         
-        const fontStyleSheet = "https://fonts.googleapis.com/css?family=Inter";
+//         const fontStyleSheet = "https://fonts.googleapis.com/css?family=Inter";
 
-        hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
+//         hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
         
-           hyperKycConfig.setInputs(
-              {
-                 "fullName":"Rajat Rangacharya Meemanshi"
-              }
-        );
+//            hyperKycConfig.setInputs(
+//               {
+//                  "fullName":"Rajat Rangacharya Meemanshi"
+//               }
+//         );
         
       
   
     
-    const handler = (HyperKycResult) => {
-        console.log(HyperKycResult)
-        if (HyperKycResult.Cancelled) {
-          // user cancelled
-           console.log(HyperKycResult.Cancelled);
-        } else if (HyperKycResult.Failure) {
-          // failure
-            console.log(HyperKycResult.Failure);
-        } else if (HyperKycResult.Success) {
-          // success
-            console.log(HyperKycResult.Success);
-        }
-    }
-      HyperKYCModule.launch(hyperKycConfig, handler);
+//     const handler = (HyperKycResult) => {
+//         console.log(HyperKycResult)
+//         if (HyperKycResult.Cancelled) {
+//           // user cancelled
+//            console.log(HyperKycResult.Cancelled);
+//         } else if (HyperKycResult.Failure) {
+//           // failure
+//             console.log(HyperKycResult.Failure);
+//         } else if (HyperKycResult.Success) {
+//           // success
+//             console.log(HyperKycResult.Success);
+//         }
+//     }
+//       HyperKYCModule.launch(hyperKycConfig, handler);
         
 //         HyperSnapSDK.init(accessToken,HyperSnapParams.Region.India);
 //         HyperSnapSDK.startUserSession();
