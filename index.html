@@ -50,27 +50,27 @@
 //     }
 //       HyperKYCModule.launch(hyperKycConfig, handler);
         
-//         HyperSnapSDK.init(accessToken,HyperSnapParams.Region.India);
-//         HyperSnapSDK.startUserSession();
-// var hvFaceConfig = new HVFaceConfig();
-//       //  hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
-// hvFaceConfig.setShouldShowInstructionPage(true);
-//         //hvFaceConfig.setShouldUseSignature(true);
+        HyperSnapSDK.init(accessToken,HyperSnapParams.Region.India);
+        HyperSnapSDK.startUserSession();
+var hvFaceConfig = new HVFaceConfig();
+      //  hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
+hvFaceConfig.setShouldShowInstructionPage(true);
+        //hvFaceConfig.setShouldUseSignature(true);
         
-//         callback = (HVError, HVResponse) => {
-//   if(HVError) {
-//     var errorCode = HVError.getErrorCode();
-//     var errorMessage = HVError.getErrorMessage();
-//      console.log(HVError);
-//   } 
-//   else if(HVResponse) {
-//     var apiResults = HVResponse.getApiResult();
-//     var apiHeaders = HVResponse.getApiHeaders();
-//     var imageBase64 = HVResponse.getImageBase64();
-//     var attempts = HVResponse.getAttemptsCount();
-//       console.log(HVResponse);
+        callback = (HVError, HVResponse) => {
+  if(HVError) {
+    var errorCode = HVError.getErrorCode();
+    var errorMessage = HVError.getErrorMessage();
+     console.log(HVError);
+  } 
+  else if(HVResponse) {
+    var apiResults = HVResponse.getApiResult();
+    var apiHeaders = HVResponse.getApiHeaders();
+    var imageBase64 = HVResponse.getImageBase64();
+    var attempts = HVResponse.getAttemptsCount();
+      console.log(HVResponse);
       
-//     console.log(apiHeaders);
+    console.log(apiHeaders);
       
       
 //   }
@@ -89,7 +89,7 @@
 // })
 // };
 
-// HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
+HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
 
 
         
