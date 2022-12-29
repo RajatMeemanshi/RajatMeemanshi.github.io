@@ -51,7 +51,8 @@
 //       HyperKYCModule.launch(hyperKycConfig, handler);
         
         HyperSnapSDK.init(accessToken,HyperSnapParams.Region.Africa);
-        HyperSnapSDK.startUserSession();
+        HyperSnapSDK.endUserSession();
+        HyperSnapSDK.startUserSession("test");
 var hvFaceConfig = new HVFaceConfig();
       //  hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
 hvFaceConfig.setShouldShowInstructionPage(true);
