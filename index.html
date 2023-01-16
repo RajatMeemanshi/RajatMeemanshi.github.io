@@ -15,11 +15,11 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImxkemZ6byIsImhhc2giOiI2ZGIyZTJhZGZmMzhiNmExZGE4MDQwZWY5YmE1NTI1ZjBiY2I4MDY0NzUxYjRkYThkMWFkM2Q3YzBkMTYzODU0IiwiaWF0IjoxNjczMjUzMzk2LCJleHAiOjE2NzMyODkzOTYsImp0aSI6ImI2MTk5ZjdhLTBkNzItNDZiNS1iMzIxLTk2OWY1MDZiZGE1MCJ9.fGF4hWX_2Nr9DutohZdLEdu5oF9bIqt_wsRl7eGJ-8Kwj3gZH4xRL0eVzFvg_Oz675YrmGPda69ivPcOyCz7zQy0cLe08EGhRZTnseZTtVcIAV36-GvcjNybXCPghW5corejQ_PRC1o9tDKoChQEeNZf2CvxEIwoQ02wMyYrU8k"
+        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjczODU0NjQ1LCJleHAiOjE2NzM4OTA2NDUsImp0aSI6ImQ5NGUyMjc1LWFmOWUtNGFhMC05ZGZhLTZmMjk2OGU0ZjUwMCJ9.N0L-FC_Mi_4y6yBfIbDE4kXJEZ2NfnryLosEYmc74MSfQ2H0BdS_3givdSRpuL4tzMY5tUh-GyBd5du3Tf7dKDRFW10_ZUas33sVUoJ-NaUujLOqw7kuicyXd4L8owgWFW9wSxeC4b2gpKXYeiMebWAoha5_xCNHKuDRYo5BPLg"
         const hyperKycConfig = new HyperKycConfig(
             accessToken,
-            "ind_ckyc_digilocker_acko",
-            "HV-Test-0001"
+            "workflow-test-rajat",
+            "HV-Test-00001"
         );
         
         const fontStyleSheet = "https://fonts.googleapis.com/css?family=Inter";
@@ -30,16 +30,7 @@
               {
                  "fullName":"Rajat Rangacharya Meemanshi"
               });
-        
-        var fullName = "Rajat"
-        
-        hyperKycConfig.setInputs(
-              {
-                 fullName
-              });
-        
-        
-      
+ 
   
     
     const handler = (HyperKycResult) => {
