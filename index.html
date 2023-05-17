@@ -27,7 +27,7 @@
             loanAmount :"10,000,000",
             skipSecondQuestion: "no",  
             showThirdQuestion: "yes"
-        }
+        };
         hyperKycConfig.setInputs(customInputs)
  
   
@@ -46,52 +46,7 @@
         }
     }
       HyperKYCModule.launch(hyperKycConfig, handler);
-        
-//         HyperSnapSDK.init(accessToken,HyperSnapParams.Region.Africa);
-//         HyperSnapSDK.endUserSession();
-//         HyperSnapSDK.startUserSession("test");
-// var hvFaceConfig = new HVFaceConfig();
-//       //  hvFaceConfig.setEnableFaceAutoCapture(true);// First create a hvdoc config object
-// hvFaceConfig.setShouldShowInstructionPage(true);
-//         //hvFaceConfig.setShouldUseSignature(true);
-        
-//         callback = (HVError, HVResponse) => {
-//   if(HVError) {
-//     var errorCode = HVError.getErrorCode();
-//     var errorMessage = HVError.getErrorMessage();
-//      console.log(HVError);
-//   } 
-//   else if(HVResponse) {
-//     var apiResults = HVResponse.getApiResult();
-//     var apiHeaders = HVResponse.getApiHeaders();
-//     var imageBase64 = HVResponse.getImageBase64();
-//     var attempts = HVResponse.getAttemptsCount();
-//       console.log(HVResponse);
-      
-//     console.log(apiHeaders);
-      
-      
-//    }
-//         }
-// //            HyperSnapSDK.extractExifData((hvExifData)=>{
-// //   console.log("Datetime : " + hvExifData.getDatetime())
-// //   console.log("Latitude : " + hvExifData.getLatitude())
-// //   console.log("Longitude : " +hvExifData.getLongitude())
-// //   console.log("Browser : " +hvExifData.getBrowser())
-// //   console.log("BrowserVersion : " +hvExifData.getBrowserVersion())
-// //   console.log("Device : " +hvExifData.getDevice())
-// //   console.log("UserAgent : " +hvExifData.getUserAgent())
-// //   console.log("IP Address : " + hvExifData.getIpAddress())
-// //   console.log("City : " + hvExifData.getCity())
-// //   console.log("Country : " + hvExifData.getCountry())
-// //   console.log("Country Code : " + hvExifData.getCountryCode())
-// // })
-// // };
-
-// HVFaceModule.start(hvFaceConfig, callback);// Start the HVFaceModule. Callback is the function that receives the data once the api call finishes.It gets two objects HVError and HVResponse.
-
-
-        
+       
  
     }
 </script>
