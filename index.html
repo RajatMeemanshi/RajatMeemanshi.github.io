@@ -19,10 +19,16 @@
         const hyperKycConfig = new HyperKycConfig(
             accessToken,
             "workflow-test-rajat",
-            "HV-Test-May-17th-001"
+            "HV-Test-May-17th"+Math.floor(Math.random());
         );
         
-     
+     const customInputs = {
+            name:"Rajat M",
+            loanAmount :"10,000,000",
+            skipSecondQuestion: "no",  
+            showThirdQuestion: "yes"
+        }
+        hyperKycConfig.setInputs(customInputs)
  
   
     
