@@ -8,14 +8,12 @@
 </head>
 
 <body>
-    <div>
-        <button type="button" onclick="starOnboarding()">
-            Start Onboarding
-        </button>
-    </div>
+    <script>starOnboarding();</script>
 </body>
 <script>
-    function starOnboarding() {
+    
+       
+ function starOnboarding() {
             const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjg3NTA0NjQ3LCJleHAiOjE2ODc1NDA2NDcsImp0aSI6ImI0NWZiZDAyLThjYTEtNDNlMC1iMjBhLWM3MzdiZTAwMDY4MCJ9.egTmKgOf86yXMV5qcP-G2htgvl0NH59YIKOaTj5CNjv1SWcZAkiwq9fkLqX1NPGPdsnJN2ln-4Yh2EIPbNRqeOi1g-5g-u-QtFh6Z_gTJjcM9JXyDiZvgRzuySMpdOn9wM6qfDTpg-_vEJVMdFEbykyU9eyy4dAhJRpemPZkJDY"
             const hyperKycConfig = new HyperKycConfig(
             accessToken,
@@ -40,9 +38,6 @@
     }
         hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
       HyperKYCModule.launch(hyperKycConfig, handler);
-       
- 
-    }
 </script>
 
 </html>
