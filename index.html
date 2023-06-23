@@ -22,7 +22,7 @@
             "HV-Test-May-17th"+Math.floor(Math.random())
         );
  
-  
+    const fontStyleSheet = "https://fonts.googleapis.com/css?family=Conto";
     
     const handler = (HyperKycResult) => {
         console.log(HyperKycResult)
@@ -37,6 +37,7 @@
             console.log(HyperKycResult.Success);
         }
     }
+        hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
       HyperKYCModule.launch(hyperKycConfig, handler);
        
  
