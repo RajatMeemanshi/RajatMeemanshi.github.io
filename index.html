@@ -15,20 +15,12 @@
 </body>
 <script>
     function starOnboarding() {
-        const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjg0MzE0NDk5LCJleHAiOjE2ODQzNTA0OTksImp0aSI6ImQ0NDM4MDRjLWYwZjEtNDE0NC1hMDZlLTVhYzY1YmNjZjRiMyJ9.K4837tcR9_exlHO2E-vZ5iWAO1JGCuTiCqTnpK_8P8IkdJJYVsajsmiH51lsH4IVzp3Nter2d2mePVcuv-eaHugVofEv9oSKFajtgPDvIm4M9KILPC0UJiU6tEpLu0QANAq0SS0aiZt0ym0drjNbf6FAvzmT7xc63TEe01Akf2M"
-        const hyperKycConfig = new HyperKycConfig(
+            const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjg3NTA0NjQ3LCJleHAiOjE2ODc1NDA2NDcsImp0aSI6ImI0NWZiZDAyLThjYTEtNDNlMC1iMjBhLWM3MzdiZTAwMDY4MCJ9.egTmKgOf86yXMV5qcP-G2htgvl0NH59YIKOaTj5CNjv1SWcZAkiwq9fkLqX1NPGPdsnJN2ln-4Yh2EIPbNRqeOi1g-5g-u-QtFh6Z_gTJjcM9JXyDiZvgRzuySMpdOn9wM6qfDTpg-_vEJVMdFEbykyU9eyy4dAhJRpemPZkJDY"
+            const hyperKycConfig = new HyperKycConfig(
             accessToken,
             "workflow-test-rajat",
             "HV-Test-May-17th"+Math.floor(Math.random())
         );
-        
-     const customInputs = {
-            name:"Rajat M",
-            loanAmount :"10,000,000",
-            skipSecondQuestion: "no",  
-            showThirdQuestion: "yes"
-        };
-        hyperKycConfig.setInputs(customInputs)
  
   
     
