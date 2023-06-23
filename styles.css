@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "YourFontName";
-  src: url("fonts/your-font-file.ttf") format("truetype");
+  font-family: "Conto";
+  src: url("Conto Regular.ttf") format("truetype");
 }
 
 * {
-  font-family: "YourFontName", sans-serif;
+  font-family: "Conto", sans-serif;
 }
 
 /* Additional CSS styles for your page */
