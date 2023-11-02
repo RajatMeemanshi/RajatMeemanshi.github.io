@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <script src="https://hv-camera-web-sg.s3.ap-southeast-1.amazonaws.com/hyperverge-web-sdk@7.5.1/src/sdk.min.js"></script>
+    <script src="https://hv-camera-web-sg.s3.ap-southeast-1.amazonaws.com/hyperverge-web-sdk@7.6.1/src/sdk.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -14,14 +14,14 @@
         });
 
         function startOnboarding() {
-            const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjkyOTUxMDA2LCJleHAiOjE2OTI5ODcwMDYsImp0aSI6IjUyOWM0ZGY1LTQ4ZjItNDBjMi1iZjNlLTdjNzJhNDUyM2I1OSJ9.NH77rptENX34F_5VDm6GYuA3r1sK87Mr7JXsRf8NQd9MQoIVQW3BCO3HPb1ODT7WyBsTMQauiAAejutaDmGo0tT-RSroIOmQl0TCx8yUwdsdvDX14U5JVOkqkhhSUW6__lad8xYJmlKH65aQZjxAy_ahJuPHu-yv6m-w0YjaotQ"
+            const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNjdWx2eSIsImhhc2giOiIwOTVmNDU4Y2NiM2EwZTFhNzFjYWQyMjM1ZTRkYTRlY2M3MWZlMmM2MWNhYWVlZTJlNzg2ZDY3YTEzODg1NTFlIiwiaWF0IjoxNjk4OTAyNjQ1LCJleHAiOjE2OTg5Mzg2NDUsImp0aSI6IjdmNzIxMWIzLTQyNmItNDM2Yi1hZmYzLWZmNTc4MmFiOGFlMCJ9.gzdhjw9p_FqD5-dpFh7rHQV22uEdvn0tq7zY6DYLs9rxaFbpSIFKIhfFl9WRZNndZPKXdMAeQnVCXae-9XZBB6iuwqGxaZZOxc0vya7--Ccb5Q2So2n3Gm4Odu6CT4J_PDHDJxp_nzmYMlmUpTogGlrVUfK2s05c9a0Fbv1RN7s"
             const hyperKycConfig = new HyperKycConfig(
                 accessToken,
                 "workflow-test-rajat",
-                "HV-Test-May-17th" + Math.floor(Math.random())
+                "HV-Test-Nov-2nd" + Math.floor(Math.random())
             );
 
-            const fontStyleSheet = "conto-typemates/webfonts/Conto-Regular.eot";
+           // const fontStyleSheet = "conto-typemates/webfonts/Conto-Regular.eot";
 
             const handler = (HyperKycResult) => {
                 console.log(HyperKycResult);
@@ -37,7 +37,7 @@
                 }
             };
 
-            hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
+            //hyperKycConfig.setCustomFontStylesheet(fontStyleSheet);
             HyperKYCModule.launch(hyperKycConfig, handler);
         }
     </script>
